@@ -11,14 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131009174916) do
+ActiveRecord::Schema.define(version: 20131009220328) do
 
   create_table "events", force: true do |t|
     t.string   "summary",     null: false
-    t.string   "calendar_id", null: false
     t.string   "description", null: false
     t.datetime "start_at",    null: false
     t.datetime "end_at",      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "calendar_id"
+    t.string   "room_id"
+  end
+
+  create_table "rooms", force: true do |t|
+    t.string   "name"
+    t.string   "location"
+    t.string   "room_number"
+    t.string   "calendar_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,0 +1,7 @@
+<%= simple_form_for @room do |f| %>
+  <%= f.input :name %>
+  <%= f.input :location %>
+  <%= f.input :room_number %>
+   <%= f.input :calendar_id, collection: Google::CalendarList.calendar_parser.keys , include_blank: 'Select...',required: true, label: "Calendar" %>
+  <%= f.button :submit %>
+<% end %>

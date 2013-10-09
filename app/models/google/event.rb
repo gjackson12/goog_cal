@@ -12,7 +12,7 @@ module Google
       @end_at = attributes["end_at"]
       @calendar_id = attributes["calendar_id"]
       @description = attributes["description"]
-      # @token = insert personal token to work
+      @token = ENV['TOKEN']
     end
 
     def parameters
@@ -24,6 +24,7 @@ module Google
     def body
       JSON.dump({
         'summary' => @summary,
+        'description' => @description,
         'start' => {
           'dateTime' => @start_at['dateTime'].to_datetime.rfc3339
         },

@@ -3,6 +3,7 @@
   <%= f.datetime_select :start_at, label: "Start time" %>
   <%= f.datetime_select :end_at, label: "End time" %>
   <%= f.input :description %>
+  <%= f.association :room, :label_method => :complete_name, value_method: :calendar_id, prompt: "Choose a Room" %>
 
   <%= f.submit "Create this Event!" %>
 

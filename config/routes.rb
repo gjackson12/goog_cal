@@ -3,6 +3,7 @@ GoogleApi::Application.routes.draw do
 
   root "pages#home"
   match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
+  resources :rooms
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

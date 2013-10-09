@@ -15,6 +15,16 @@ module Google
           Google::Calendar.new(item)
         end
       end
+
+      def calendar_parser
+        @cal_array = self.all(ENV['TOKEN'])
+        @hash = {}
+        @cal_array.each_with_index do |calendar, index|
+          @hash[calendar.summary] = calendar.id
+        end
+        return @hash
+      end
+
     end
   end
 end

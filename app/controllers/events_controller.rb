@@ -18,7 +18,7 @@ class EventsController < ApplicationController
       'end_at' => {
         'dateTime' => @event.end_at
       },
-      'calendar_id' => 'launchacademy.co_l2e3mks1ftini9evjlkq9amokg@group.calendar.google.com',
+      'calendar_id' => @event.room_id,
       'description' => @event.description
     }
     new_cal_event = Google::Event.new(event)
@@ -31,6 +31,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:summary, :start_at, :end_at, :description)
+    params.require(:event).permit(:summary, :start_at, :end_at, :description, :room_id)
   end
 end
