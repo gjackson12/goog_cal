@@ -7,7 +7,9 @@ module Google
         service ||= client.discovered_api('calendar', 'v3')
         result = client.execute(
           :api_method => service.calendar_list.list,
-          :parameters => {},
+          :parameters => {
+            'showHidden' => true
+          },
           :headers => {'Content-Type' => 'application/json'})
         JSON.parse(result.response.body)["items"].map do |item|
           Google::Calendar.new(item)
