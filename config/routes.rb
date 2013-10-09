@@ -1,4 +1,6 @@
 GoogleApi::Application.routes.draw do
+  resources :events
+
   root "pages#home"
   match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   # The priority is based upon order of creation: first created -> highest priority.

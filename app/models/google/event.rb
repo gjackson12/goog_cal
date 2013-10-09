@@ -4,7 +4,7 @@ module Google
 
     attr_accessor :token
 
-    attr_accessor :summary, :start_at, :end_at, :calendar_id, :description
+    attr_accessor :id, :summary, :start_at, :end_at, :calendar_id, :description
 
     def initialize(attributes = {})
       @summary = attributes["summary"]
@@ -12,6 +12,7 @@ module Google
       @end_at = attributes["end_at"]
       @calendar_id = attributes["calendar_id"]
       @description = attributes["description"]
+      # @token = insert personal token to work
     end
 
     def parameters
@@ -24,18 +25,18 @@ module Google
       JSON.dump({
         'summary' => @summary,
         'start' => {
-          'dateTime' => start_at.rfc3339
+          'dateTime' => @start_at['dateTime'].to_datetime.rfc3339
         },
         'end' => {
-          'dateTime' => end_at.rfc3339
+          'dateTime' => @end_at['dateTime'].to_datetime.rfc3339
         }
       })
     end
 
     def save
       if self.token.present?
-        client = Google::APIClient.new
-        client.authorization.access_token = token
+        client = Google::APIClient.new(:application_name => "google_cal",:application_version => "0.0")
+        client.authorization.access_token = @token
         service ||= client.discovered_api('calendar', 'v3')
         result = client.execute(
           :api_method => service.events.insert,

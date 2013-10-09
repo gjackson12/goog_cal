@@ -16,11 +16,13 @@ gem 'jquery-rails'
 
 gem 'turbolinks'
 
+gem 'simple_form'
+
 group :development, :test do
   gem 'factory_girl'
   gem 'rspec-rails'
 
   gem 'pry-rails'
   gem 'vcr'
-  gem 'webmock'
+  # gem 'webmock'
 end
