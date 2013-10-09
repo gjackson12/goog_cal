@@ -15,3 +15,10 @@ gem 'omniauth-google-oauth2', git: 'https://github.com/zquestz/omniauth-google-o
 gem 'jquery-rails'
 
 gem 'turbolinks'
+
+group :development, :test do
+  gem 'factory_girl'
+  gem 'rspec-rails'
+
+  gem 'pry-rails'
+end
