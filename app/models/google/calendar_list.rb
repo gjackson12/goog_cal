@@ -16,13 +16,12 @@ module Google
         end
       end
 
-      def calendar_parser
-        @cal_array = self.all(ENV['TOKEN'])
-        @hash = {}
-        @cal_array.each_with_index do |calendar, index|
-          @hash[calendar.summary] = calendar.id
+      def calendar_map(token)
+        @cal_array = self.all(token)
+        @cal_array.inject({}) do |map, calendar|
+          map[calendar.summary] = calendar.id
+          map
         end
-        return @hash
       end
 
     end
