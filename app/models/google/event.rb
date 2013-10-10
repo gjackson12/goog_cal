@@ -15,6 +15,20 @@ module Google
       @token = ENV['TOKEN']
     end
 
+    def save
+      if self.token.present?
+        client = Google::APIClient.new(:application_name => "google_cal",:application_version => "0.0")
+        client.authorization.access_token = @token
+        service ||= client.discovered_api('calendar', 'v3')
+        result = client.execute(
+          :api_method => service.events.insert,
+          :parameters => parameters,
+          :body => body,
+          :headers => {'Content-Type' => 'application/json'})
+        self.id = JSON.parse(result.body)["id"]
+      end
+
+    protected
     def parameters
       {
         'calendarId' => URI.encode(@calendar_id)
@@ -33,19 +47,6 @@ module Google
         }
       })
     end
-
-    def save
-      if self.token.present?
-        client = Google::APIClient.new(:application_name => "google_cal",:application_version => "0.0")
-        client.authorization.access_token = @token
-        service ||= client.discovered_api('calendar', 'v3')
-        result = client.execute(
-          :api_method => service.events.insert,
-          :parameters => parameters,
-          :body => body,
-          :headers => {'Content-Type' => 'application/json'})
-        self.id = JSON.parse(result.body)["id"]
-      end
     end
   end
 end

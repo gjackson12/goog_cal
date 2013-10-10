@@ -23,9 +23,25 @@ class EventsController < ApplicationController
     }
     new_cal_event = Google::Event.new(event)
 
-    new_cal_event.parameters
-    new_cal_event.body
+    
+    # new_cal_event.parameters
+    # new_cal_event.body
+    # TODO: handle for failure case
     new_cal_event.save
+
+    #TODO: move this behavior to a model concern
+    #if @event.save
+    #  @event.syndicate
+
+    ### in the model
+    #def syndicate
+    #build_google_event
+    #end
+    #def build_google_event
+    #
+    #end
+
+
   end
 
   private
