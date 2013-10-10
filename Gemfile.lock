@@ -179,7 +179,6 @@ GEM
     tzinfo (0.3.37)
     uuidtools (2.1.4)
     valid_attribute (1.3.1)
-    vcr (2.6.0)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -202,4 +201,3 @@ DEPENDENCIES
   sqlite3
   turbolinks
   valid_attribute
-  vcr

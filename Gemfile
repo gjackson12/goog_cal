@@ -26,6 +26,6 @@ group :development, :test do
   gem 'launchy'
   gem 'capybara'
   gem 'pry-rails'
-  gem 'vcr'
+  # gem 'vcr'
   # gem 'webmock'
 end
