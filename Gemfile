@@ -21,7 +21,10 @@ gem 'simple_form'
 group :development, :test do
   gem 'factory_girl'
   gem 'rspec-rails'
-
+  gem 'shoulda'
+  gem 'valid_attribute'
+  gem 'launchy'
+  gem 'capybara'
   gem 'pry-rails'
   gem 'vcr'
   # gem 'webmock'
