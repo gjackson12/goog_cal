@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20131009220328) do
     t.datetime "end_at",      null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "calendar_id"
     t.string   "room_id"
   end
 
