@@ -46,7 +46,7 @@ module Google
           'dateTime' => @end_at['dateTime'].to_datetime.rfc3339
         }
       })
-    end
+      end
     end
   end
 end
