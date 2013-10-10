@@ -16,9 +16,11 @@ feature 'create a room', %Q{
     fill_in 'Name', with: 'Ballroom'
     fill_in 'Location', with: '3rd floor'
     fill_in 'Room number', with: '5'
+    select 'Roomzilla Testing', from: 'Calendar'
 
-    click_button 'Submit'
+    click_on 'Create Room'
     expect(page).to have_content("You created a room")
+    expect(Room.last.calendar_id).to_not be_nil
   end
 
   scenario 'admin fails to create a valid room' do

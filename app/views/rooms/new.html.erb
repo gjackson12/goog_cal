@@ -3,6 +3,6 @@
   <%= f.input :location %>
   <%= f.input :room_number %>
   <%# TODO: move the class method invocation to the controller %>
-   <%= f.input :calendar_id, collection: Google::CalendarList.calendar_parser.keys , include_blank: 'Select...',required: true, label: "Calendar" %>
+   <%= f.input :calendar_id, collection: Google::CalendarList.calendar_map(ENV['TOKEN']).keys, include_blank: 'Select...',required: true, label: "Calendar" %>
   <%= f.button :submit %>
 <% end %>
