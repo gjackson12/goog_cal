@@ -2,17 +2,15 @@ class RoomsController < ApplicationController
   
   def new
     @room = Room.new
+    @room.google_access_token = ENV['TOKEN']
   end
 
   def create
     @room = Room.create(room_params)
-
-    cal_parser
-
-    @room.calendar_id = @hash[@room.calendar_id]
     
+    @room.google_access_token = ENV['TOKEN']
     if @room.save
-      flash[:notice] = "This shit worked!"
+      flash[:notice] = "You created a room"
       redirect_to events_path
     else
       render :new
@@ -24,10 +22,6 @@ class RoomsController < ApplicationController
 
   def room_params
     params.require(:room).permit(:name, :location, :calendar_id, :room_number)
-  end
-
-  def cal_parser
-    @hash = Google::CalendarList.calendar_parser
   end
 
 end

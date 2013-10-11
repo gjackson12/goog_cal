@@ -55,6 +55,8 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    crack (0.4.1)
+      safe_yaml (~> 0.9.0)
     diff-lcs (1.2.4)
     erubis (2.7.0)
     execjs (2.0.2)
@@ -142,6 +144,7 @@ GEM
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
+    safe_yaml (0.9.7)
     shoulda (3.5.0)
       shoulda-context (~> 1.0, >= 1.0.1)
       shoulda-matchers (>= 1.4.1, < 3.0)
@@ -179,6 +182,10 @@ GEM
     tzinfo (0.3.37)
     uuidtools (2.1.4)
     valid_attribute (1.3.1)
+    vcr (2.6.0)
+    webmock (1.14.0)
+      addressable (>= 2.2.7)
+      crack (>= 0.3.2)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -201,3 +208,5 @@ DEPENDENCIES
   sqlite3
   turbolinks
   valid_attribute
+  vcr
+  webmock
