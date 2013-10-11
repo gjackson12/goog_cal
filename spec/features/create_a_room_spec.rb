@@ -4,7 +4,7 @@ feature 'create a room', %Q{
   As an admin
   I want to create room
   So that users can create reservations 
-} do
+}, vcr: true do
 
 # Acceptance Criteria
 # * I must specify a room name, location, a room number, and a google calendar
@@ -16,7 +16,8 @@ feature 'create a room', %Q{
     fill_in 'Name', with: 'Ballroom'
     fill_in 'Location', with: '3rd floor'
     fill_in 'Room number', with: '5'
-    select 'Roomzilla Testing', from: 'Calendar'
+    first_value = find_field('Calendar').find('option:first-child').text
+    select first_value, from: 'Calendar'
 
     click_on 'Create Room'
     expect(page).to have_content("You created a room")
@@ -26,7 +27,7 @@ feature 'create a room', %Q{
   scenario 'admin fails to create a valid room' do
     visit new_room_path
 
-    click_button 'Submit'
+    click_button 'Create Room'
     expect(page).to have_content("can't be blank")
   end
 end

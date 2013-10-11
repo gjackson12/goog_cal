@@ -11,7 +11,7 @@ module Google
             'showHidden' => true
           },
           :headers => {'Content-Type' => 'application/json'})
-        JSON.parse(result.response.body)["items"].map do |item|
+        (JSON.parse(result.response.body)["items"] || []).map do |item|
           Google::Calendar.new(item)
         end
       end
