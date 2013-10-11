@@ -19,7 +19,7 @@ module Google
       def calendar_map(token)
         @cal_array = self.all(token)
         @cal_array.inject({}) do |map, calendar|
-          map[calendar.summary] = calendar.id
+          map[calendar.id] = calendar.summary
           map
         end
       end
