@@ -27,6 +27,7 @@ module Google
           :headers => {'Content-Type' => 'application/json'})
         self.id = JSON.parse(result.body)["id"]
       end
+    end
 
     protected
     def parameters
@@ -46,7 +47,6 @@ module Google
           'dateTime' => @end_at['dateTime'].to_datetime.rfc3339
         }
       })
-      end
     end
   end
 end
