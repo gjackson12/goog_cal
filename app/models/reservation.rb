@@ -1,15 +1,17 @@
-class Event < ActiveRecord::Base
-validates :summary,       presence: true
+class Reservation < ActiveRecord::Base
+  validates :summary,       presence: true
   validates :description,   presence: true
   validates :start_at,      presence: true
   validates :end_at,        presence: true
+  
 
    belongs_to :room
 
-  def syndicate
-    if room.present? && room.has_google_calendar?
-      event = Google::Event.new(build_google_event).save
-      if event.id.present?
+  def syndicate(token)
+    if room.present? && room.calendar_id?
+      binding.pry
+      event = Google::Event.new(token, build_google_event).save
+      if self.id.present?
         self.google_event_id = event.id
         self.save
       else
@@ -21,7 +23,7 @@ validates :summary,       presence: true
   end
 
   def build_google_event
-    event = {
+   event = {
       'summary' => self.summary,
       'start_at' => {
         'dateTime' => self.start_at

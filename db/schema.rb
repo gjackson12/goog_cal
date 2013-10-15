@@ -11,16 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131009220328) do
+ActiveRecord::Schema.define(version: 20131015210649) do
 
-  create_table "events", force: true do |t|
-    t.string   "summary",     null: false
-    t.string   "description", null: false
-    t.datetime "start_at",    null: false
-    t.datetime "end_at",      null: false
+  create_table "reservations", force: true do |t|
+    t.string   "summary",         null: false
+    t.string   "description",     null: false
+    t.datetime "start_at",        null: false
+    t.datetime "end_at",          null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "room_id"
+    t.integer  "room_id"
+    t.string   "google_event_id"
   end
 
   create_table "rooms", force: true do |t|

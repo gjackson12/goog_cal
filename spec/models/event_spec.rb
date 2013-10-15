@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Event do
+describe Reservation do
   it{should have_valid(:summary).when("asdfkabsdf")}
   it{should_not have_valid(:summary).when(nil, " ")}
 

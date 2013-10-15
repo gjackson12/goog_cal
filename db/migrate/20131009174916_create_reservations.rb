@@ -1,6 +1,6 @@
-class CreateEvents < ActiveRecord::Migration
+class CreateReservations < ActiveRecord::Migration
   def change
-    create_table :events do |t|
+    create_table :reservations do |t|
       
       t.string      :summary,     null: false
       t.string      :description, null: false

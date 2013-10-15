@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - google-api-ruby-client/0.6.4 Mac OS X/10.8.4
+      - google-api-ruby-client/0.6.4 Mac OS X/10.7.5
       Content-Type:
       - application/x-www-form-urlencoded
       Accept-Encoding:
@@ -21,11 +21,11 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Fri, 11 Oct 2013 17:06:34 GMT
+      - Tue, 15 Oct 2013 18:47:12 GMT
       Date:
-      - Fri, 11 Oct 2013 17:01:34 GMT
+      - Tue, 15 Oct 2013 18:42:12 GMT
       Etag:
-      - '"mo5WHlwad31qA7V5eFQaSN14NNg/CprmxbC_n4VJOa4m78gYggaU4m4"'
+      - '"DGgqtFnjgu83tuwvvVNNUhOiHWk/CprmxbC_n4VJOa4m78gYggaU4m4"'
       Content-Type:
       - application/json; charset=UTF-8
       X-Content-Type-Options:
@@ -37,7 +37,7 @@ http_interactions:
       Server:
       - GSE
       Age:
-      - '102'
+      - '118'
       Cache-Control:
       - public, max-age=300, must-revalidate, no-transform
       Alternate-Protocol:
@@ -49,7 +49,7 @@ http_interactions:
       string: |
         {
          "kind": "discovery#restDescription",
-         "etag": "\"mo5WHlwad31qA7V5eFQaSN14NNg/CprmxbC_n4VJOa4m78gYggaU4m4\"",
+         "etag": "\"DGgqtFnjgu83tuwvvVNNUhOiHWk/CprmxbC_n4VJOa4m78gYggaU4m4\"",
          "discoveryVersion": "v1",
          "id": "calendar:v3",
          "name": "calendar",
@@ -2346,7 +2346,7 @@ http_interactions:
          }
         }
     http_version: 
-  recorded_at: Fri, 11 Oct 2013 17:03:38 GMT
+  recorded_at: Tue, 15 Oct 2013 18:44:12 GMT
 - request:
     method: get
     uri: https://www.googleapis.com/calendar/v3/users/me/calendarList?showHidden=true
@@ -2355,11 +2355,11 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - google-api-ruby-client/0.6.4 Mac OS X/10.8.4
+      - google-api-ruby-client/0.6.4 Mac OS X/10.7.5
       Content-Type:
       - application/json
       Authorization:
-      - Bearer ya29.AHES6ZSOiiZGI1MSStgjDhUOtQyEFeN6ttqY-kZORoK6fOQ
+      - Bearer ya29.AHES6ZR-WEp7NbVw-lvC0CbfrMVJgCQAlmzSoNfWESgdqEI
       Cache-Control:
       - no-store
       Accept-Encoding:
@@ -2372,13 +2372,13 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Fri, 11 Oct 2013 17:03:17 GMT
+      - Tue, 15 Oct 2013 18:45:39 GMT
       Date:
-      - Fri, 11 Oct 2013 17:03:17 GMT
+      - Tue, 15 Oct 2013 18:45:39 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Etag:
-      - '"2Xe5ZDn_ZMD5bsyedBn8h1XCRfw/ky6k_sZXJePVFox8zxsmzE6Ufec"'
+      - '"zDYNyduc5vEaXlXz7scQOpE_a8Y/x62lgcRl3exrMhW5bsTFmQcfGZk"'
       Content-Type:
       - application/json; charset=UTF-8
       X-Content-Type-Options:
@@ -2398,99 +2398,61 @@ http_interactions:
       string: |
         {
          "kind": "calendar#calendarList",
-         "etag": "\"2Xe5ZDn_ZMD5bsyedBn8h1XCRfw/ky6k_sZXJePVFox8zxsmzE6Ufec\"",
+         "etag": "\"zDYNyduc5vEaXlXz7scQOpE_a8Y/x62lgcRl3exrMhW5bsTFmQcfGZk\"",
          "items": [
           {
            "kind": "calendar#calendarListEntry",
-           "etag": "\"2Xe5ZDn_ZMD5bsyedBn8h1XCRfw/meGNHAO37GD91cnw19HnITI8Yf8\"",
-           "id": "graham.jackson07@gmail.com",
-           "summary": "graham.jackson07@gmail.com",
-           "timeZone": "America/New_York",
-           "colorId": "2",
-           "backgroundColor": "#d06b64",
+           "etag": "\"zDYNyduc5vEaXlXz7scQOpE_a8Y/dXPOsA4W7WwqW9PBlNNmO2iwjSs\"",
+           "id": "test.roomzillla@gmail.com",
+           "summary": "test.roomzillla@gmail.com",
+           "timeZone": "America/Chicago",
+           "colorId": "17",
+           "backgroundColor": "#9a9cff",
            "foregroundColor": "#000000",
            "selected": true,
            "accessRole": "owner",
+           "defaultReminders": [
+            {
+             "method": "popup",
+             "minutes": 30
+            },
+            {
+             "method": "email",
+             "minutes": 30
+            }
+           ],
            "primary": true
           },
           {
            "kind": "calendar#calendarListEntry",
-           "etag": "\"2Xe5ZDn_ZMD5bsyedBn8h1XCRfw/F3Mqxe_6FGeJ4Yu38VEH2ny7tnQ\"",
-           "id": "3b8kvmb1h4jnpgv7ht8gicchl8@group.calendar.google.com",
-           "summary": "Dans don't do shit calendar",
-           "timeZone": "America/New_York",
-           "colorId": "18",
-           "backgroundColor": "#b99aff",
-           "foregroundColor": "#000000",
-           "selected": true,
-           "accessRole": "owner"
-          },
-          {
-           "kind": "calendar#calendarListEntry",
-           "etag": "\"2Xe5ZDn_ZMD5bsyedBn8h1XCRfw/OQr4tlTeonBzc0mcQOnHg7nKLM8\"",
-           "id": "jennifer.caulk@gmail.com",
-           "summary": "jennifer.caulk@gmail.com",
-           "timeZone": "America/New_York",
-           "colorId": "15",
-           "backgroundColor": "#9fc6e7",
+           "etag": "\"zDYNyduc5vEaXlXz7scQOpE_a8Y/D_0SEVw3651xAx8SrRRm05W0tXY\"",
+           "id": "#contacts@group.v.calendar.google.com",
+           "summary": "Contacts' birthdays and events",
+           "description": "Your contacts' birthdays and anniversaries",
+           "timeZone": "America/Chicago",
+           "colorId": "20",
+           "backgroundColor": "#cabdbf",
            "foregroundColor": "#000000",
            "selected": true,
            "accessRole": "reader"
           },
           {
            "kind": "calendar#calendarListEntry",
-           "etag": "\"2Xe5ZDn_ZMD5bsyedBn8h1XCRfw/EYLsKl8osmcibQmM6ElyFQEtjJc\"",
-           "id": "27h1a2a4a9vsrmam7d6b9q11es@group.calendar.google.com",
-           "summary": "Roomzilla Testing",
-           "description": "We are testing shit. ",
-           "location": "DC",
-           "timeZone": "America/New_York",
-           "colorId": "12",
-           "backgroundColor": "#fad165",
+           "etag": "\"zDYNyduc5vEaXlXz7scQOpE_a8Y/1u3oBFEKlkuHOvcrqmuQKs26B50\"",
+           "id": "en.usa#holiday@group.v.calendar.google.com",
+           "summary": "US Holidays",
+           "description": "US Holidays",
+           "timeZone": "America/Chicago",
+           "colorId": "10",
+           "backgroundColor": "#b3dc6c",
            "foregroundColor": "#000000",
            "selected": true,
-           "accessRole": "owner"
-          },
-          {
-           "kind": "calendar#calendarListEntry",
-           "etag": "\"2Xe5ZDn_ZMD5bsyedBn8h1XCRfw/sx1dFjWzHkx_8L9HlJQrDD1nbg4\"",
-           "id": "jennifer.jackson0203@gmail.com",
-           "summary": "jennifer.jackson0203@gmail.com",
-           "timeZone": "America/New_York",
-           "colorId": "9",
-           "backgroundColor": "#7bd148",
-           "foregroundColor": "#000000",
-           "selected": true,
-           "accessRole": "reader"
-          },
-          {
-           "kind": "calendar#calendarListEntry",
-           "etag": "\"2Xe5ZDn_ZMD5bsyedBn8h1XCRfw/sGHYxrzg5-8mg43zmW-CTTMXJ-Q\"",
-           "id": "launchacademy.co_l2e3mks1ftini9evjlkq9amokg@group.calendar.google.com",
-           "summary": "Mission Control",
-           "description": "This is where we keep calendar info for:\n\n-Guest Speakers at Launch Academy\n-Technology Events in and Around Boston\n-Anything Else a Launcher Would Like to Do",
-           "timeZone": "America/New_York",
-           "colorId": "4",
-           "backgroundColor": "#fa573c",
-           "foregroundColor": "#000000",
-           "selected": true,
-           "accessRole": "writer"
-          },
-          {
-           "kind": "calendar#calendarListEntry",
-           "etag": "\"2Xe5ZDn_ZMD5bsyedBn8h1XCRfw/Z62ImmtiZi0NSOL6E4g_yO16-og\"",
-           "id": "nhl_23_%57ashington+%43apitals#sports@group.v.calendar.google.com",
-           "summary": "Washington Capitals",
-           "timeZone": "America/New_York",
-           "colorId": "17",
-           "backgroundColor": "#9a9cff",
-           "foregroundColor": "#000000",
            "accessRole": "reader"
           }
          ]
         }
     http_version: 
-  recorded_at: Fri, 11 Oct 2013 17:03:38 GMT
+  recorded_at: Tue, 15 Oct 2013 18:45:41 GMT
 - request:
     method: get
     uri: https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest
@@ -2499,7 +2461,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - google-api-ruby-client/0.6.4 Mac OS X/10.8.4
+      - google-api-ruby-client/0.6.4 Mac OS X/10.7.5
       Content-Type:
       - application/x-www-form-urlencoded
       Accept-Encoding:
@@ -2512,11 +2474,11 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Fri, 11 Oct 2013 17:06:34 GMT
+      - Tue, 15 Oct 2013 18:47:12 GMT
       Date:
-      - Fri, 11 Oct 2013 17:01:34 GMT
+      - Tue, 15 Oct 2013 18:42:12 GMT
       Etag:
-      - '"mo5WHlwad31qA7V5eFQaSN14NNg/CprmxbC_n4VJOa4m78gYggaU4m4"'
+      - '"DGgqtFnjgu83tuwvvVNNUhOiHWk/CprmxbC_n4VJOa4m78gYggaU4m4"'
       Content-Type:
       - application/json; charset=UTF-8
       X-Content-Type-Options:
@@ -2528,7 +2490,7 @@ http_interactions:
       Server:
       - GSE
       Age:
-      - '176'
+      - '207'
       Cache-Control:
       - public, max-age=300, must-revalidate, no-transform
       Alternate-Protocol:
@@ -2540,7 +2502,7 @@ http_interactions:
       string: |
         {
          "kind": "discovery#restDescription",
-         "etag": "\"mo5WHlwad31qA7V5eFQaSN14NNg/CprmxbC_n4VJOa4m78gYggaU4m4\"",
+         "etag": "\"DGgqtFnjgu83tuwvvVNNUhOiHWk/CprmxbC_n4VJOa4m78gYggaU4m4\"",
          "discoveryVersion": "v1",
          "id": "calendar:v3",
          "name": "calendar",
@@ -4837,7 +4799,7 @@ http_interactions:
          }
         }
     http_version: 
-  recorded_at: Fri, 11 Oct 2013 17:04:51 GMT
+  recorded_at: Tue, 15 Oct 2013 18:45:41 GMT
 - request:
     method: get
     uri: https://www.googleapis.com/calendar/v3/users/me/calendarList?showHidden=true
@@ -4846,11 +4808,11 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - google-api-ruby-client/0.6.4 Mac OS X/10.8.4
+      - google-api-ruby-client/0.6.4 Mac OS X/10.7.5
       Content-Type:
       - application/json
       Authorization:
-      - Bearer ya29.AHES6ZSOiiZGI1MSStgjDhUOtQyEFeN6ttqY-kZORoK6fOQ
+      - Bearer ya29.AHES6ZR-WEp7NbVw-lvC0CbfrMVJgCQAlmzSoNfWESgdqEI
       Cache-Control:
       - no-store
       Accept-Encoding:
@@ -4863,13 +4825,13 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Fri, 11 Oct 2013 17:04:31 GMT
+      - Tue, 15 Oct 2013 18:45:39 GMT
       Date:
-      - Fri, 11 Oct 2013 17:04:31 GMT
+      - Tue, 15 Oct 2013 18:45:39 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Etag:
-      - '"2Xe5ZDn_ZMD5bsyedBn8h1XCRfw/ky6k_sZXJePVFox8zxsmzE6Ufec"'
+      - '"zDYNyduc5vEaXlXz7scQOpE_a8Y/x62lgcRl3exrMhW5bsTFmQcfGZk"'
       Content-Type:
       - application/json; charset=UTF-8
       X-Content-Type-Options:
@@ -4889,97 +4851,59 @@ http_interactions:
       string: |
         {
          "kind": "calendar#calendarList",
-         "etag": "\"2Xe5ZDn_ZMD5bsyedBn8h1XCRfw/ky6k_sZXJePVFox8zxsmzE6Ufec\"",
+         "etag": "\"zDYNyduc5vEaXlXz7scQOpE_a8Y/x62lgcRl3exrMhW5bsTFmQcfGZk\"",
          "items": [
           {
            "kind": "calendar#calendarListEntry",
-           "etag": "\"2Xe5ZDn_ZMD5bsyedBn8h1XCRfw/meGNHAO37GD91cnw19HnITI8Yf8\"",
-           "id": "graham.jackson07@gmail.com",
-           "summary": "graham.jackson07@gmail.com",
-           "timeZone": "America/New_York",
-           "colorId": "2",
-           "backgroundColor": "#d06b64",
+           "etag": "\"zDYNyduc5vEaXlXz7scQOpE_a8Y/dXPOsA4W7WwqW9PBlNNmO2iwjSs\"",
+           "id": "test.roomzillla@gmail.com",
+           "summary": "test.roomzillla@gmail.com",
+           "timeZone": "America/Chicago",
+           "colorId": "17",
+           "backgroundColor": "#9a9cff",
            "foregroundColor": "#000000",
            "selected": true,
            "accessRole": "owner",
+           "defaultReminders": [
+            {
+             "method": "popup",
+             "minutes": 30
+            },
+            {
+             "method": "email",
+             "minutes": 30
+            }
+           ],
            "primary": true
           },
           {
            "kind": "calendar#calendarListEntry",
-           "etag": "\"2Xe5ZDn_ZMD5bsyedBn8h1XCRfw/F3Mqxe_6FGeJ4Yu38VEH2ny7tnQ\"",
-           "id": "3b8kvmb1h4jnpgv7ht8gicchl8@group.calendar.google.com",
-           "summary": "Dans don't do shit calendar",
-           "timeZone": "America/New_York",
-           "colorId": "18",
-           "backgroundColor": "#b99aff",
-           "foregroundColor": "#000000",
-           "selected": true,
-           "accessRole": "owner"
-          },
-          {
-           "kind": "calendar#calendarListEntry",
-           "etag": "\"2Xe5ZDn_ZMD5bsyedBn8h1XCRfw/OQr4tlTeonBzc0mcQOnHg7nKLM8\"",
-           "id": "jennifer.caulk@gmail.com",
-           "summary": "jennifer.caulk@gmail.com",
-           "timeZone": "America/New_York",
-           "colorId": "15",
-           "backgroundColor": "#9fc6e7",
+           "etag": "\"zDYNyduc5vEaXlXz7scQOpE_a8Y/D_0SEVw3651xAx8SrRRm05W0tXY\"",
+           "id": "#contacts@group.v.calendar.google.com",
+           "summary": "Contacts' birthdays and events",
+           "description": "Your contacts' birthdays and anniversaries",
+           "timeZone": "America/Chicago",
+           "colorId": "20",
+           "backgroundColor": "#cabdbf",
            "foregroundColor": "#000000",
            "selected": true,
            "accessRole": "reader"
           },
           {
            "kind": "calendar#calendarListEntry",
-           "etag": "\"2Xe5ZDn_ZMD5bsyedBn8h1XCRfw/EYLsKl8osmcibQmM6ElyFQEtjJc\"",
-           "id": "27h1a2a4a9vsrmam7d6b9q11es@group.calendar.google.com",
-           "summary": "Roomzilla Testing",
-           "description": "We are testing shit. ",
-           "location": "DC",
-           "timeZone": "America/New_York",
-           "colorId": "12",
-           "backgroundColor": "#fad165",
+           "etag": "\"zDYNyduc5vEaXlXz7scQOpE_a8Y/1u3oBFEKlkuHOvcrqmuQKs26B50\"",
+           "id": "en.usa#holiday@group.v.calendar.google.com",
+           "summary": "US Holidays",
+           "description": "US Holidays",
+           "timeZone": "America/Chicago",
+           "colorId": "10",
+           "backgroundColor": "#b3dc6c",
            "foregroundColor": "#000000",
            "selected": true,
-           "accessRole": "owner"
-          },
-          {
-           "kind": "calendar#calendarListEntry",
-           "etag": "\"2Xe5ZDn_ZMD5bsyedBn8h1XCRfw/sx1dFjWzHkx_8L9HlJQrDD1nbg4\"",
-           "id": "jennifer.jackson0203@gmail.com",
-           "summary": "jennifer.jackson0203@gmail.com",
-           "timeZone": "America/New_York",
-           "colorId": "9",
-           "backgroundColor": "#7bd148",
-           "foregroundColor": "#000000",
-           "selected": true,
-           "accessRole": "reader"
-          },
-          {
-           "kind": "calendar#calendarListEntry",
-           "etag": "\"2Xe5ZDn_ZMD5bsyedBn8h1XCRfw/sGHYxrzg5-8mg43zmW-CTTMXJ-Q\"",
-           "id": "launchacademy.co_l2e3mks1ftini9evjlkq9amokg@group.calendar.google.com",
-           "summary": "Mission Control",
-           "description": "This is where we keep calendar info for:\n\n-Guest Speakers at Launch Academy\n-Technology Events in and Around Boston\n-Anything Else a Launcher Would Like to Do",
-           "timeZone": "America/New_York",
-           "colorId": "4",
-           "backgroundColor": "#fa573c",
-           "foregroundColor": "#000000",
-           "selected": true,
-           "accessRole": "writer"
-          },
-          {
-           "kind": "calendar#calendarListEntry",
-           "etag": "\"2Xe5ZDn_ZMD5bsyedBn8h1XCRfw/Z62ImmtiZi0NSOL6E4g_yO16-og\"",
-           "id": "nhl_23_%57ashington+%43apitals#sports@group.v.calendar.google.com",
-           "summary": "Washington Capitals",
-           "timeZone": "America/New_York",
-           "colorId": "17",
-           "backgroundColor": "#9a9cff",
-           "foregroundColor": "#000000",
            "accessRole": "reader"
           }
          ]
         }
     http_version: 
-  recorded_at: Fri, 11 Oct 2013 17:04:52 GMT
+  recorded_at: Tue, 15 Oct 2013 18:45:41 GMT
 recorded_with: VCR 2.6.0

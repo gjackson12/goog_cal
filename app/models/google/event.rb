@@ -2,22 +2,22 @@ module Google
   class Event
     include ActiveModel::Model
 
-    attr_accessor :token
+    attr_accessor :id, :summary, :start_at, :end_at, :calendar_id, :description, :token
 
-    attr_accessor :id, :summary, :start_at, :end_at, :calendar_id, :description
-
-    def initialize(attributes = {})
+    def initialize(token, attributes = {})
       @summary = attributes["summary"]
       @start_at = attributes["start_at"]
       @end_at = attributes["end_at"]
       @calendar_id = attributes["calendar_id"]
       @description = attributes["description"]
-      @token = ENV['TOKEN']
+      @token = token
     end
 
     def save
+      binding.pry
       if self.token.present?
-        client = Google::APIClient.new(:application_name => "google_cal",:application_version => "0.0")
+        binding.pry
+        client = Google::APIClient.new(:application_name => "goog_cal",:application_version => "0.0")
         client.authorization.access_token = @token
         service ||= client.discovered_api('calendar', 'v3')
         result = client.execute(
@@ -32,7 +32,7 @@ module Google
     protected
     def parameters
       {
-        'calendarId' => URI.encode(@calendar_id)
+        'calendarId' => URI.encode(@calendar_id.to_s)
       }
     end
 

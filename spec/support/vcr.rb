@@ -5,7 +5,7 @@ VCR.configure do |c|
   c.hook_into :webmock
   c.configure_rspec_metadata!
   c.default_cassette_options = { :record => :new_episodes }
-  c.filter_sensitive_data('<GOOGLE API KEY>') { ENV['GOOGLE_TOKEN'] }
+  c.filter_sensitive_data('<GOOGLE API KEY>') { session[:token] }
 end
 
 RSpec.configure do |c|

@@ -17,9 +17,13 @@ feature 'create a room', %Q{
     fill_in 'Location', with: '3rd floor'
     fill_in 'Room number', with: '5'
     first_value = find_field('Calendar').find('option:first-child').text
+    binding.pry
     select first_value, from: 'Calendar'
 
     click_on 'Create Room'
+
+    save_and_open_page
+
     expect(page).to have_content("You created a room")
     expect(Room.last.calendar_id).to_not be_nil
   end

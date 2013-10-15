@@ -1,5 +1,5 @@
 GoogleApi::Application.routes.draw do
-  resources :events
+  resources :reservations
 
   root "pages#home"
   match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]

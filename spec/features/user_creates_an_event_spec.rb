@@ -12,8 +12,8 @@ feature "user creates a new event", %Q{
     # * If I do not specify all required information I am prompted to do so
 
     scenario "user enters valid information" do
-      prev_count = Event.count
-      first_cal_id = Google::Calendar.list(ENV['ACCESS_TOKEN']).first.id
+      prev_count = Reservation.count
+      first_cal_id = Google::Calendar.list(session[:token]).first.id
       room = FactoryGirl.create(:room, google_calendar_id: first_cal_id)
 
       visit "/events/new"
@@ -35,7 +35,7 @@ feature "user creates a new event", %Q{
 
       click_button "Create this Event!"
 
-      expect(Event.count).to eql(prev_count + 1)
-      expect(Event.last.google_event_id).to_not be_nil
+      expect(Reservation.count).to eql(prev_count + 1)
+      expect(Reservation.last.google_event_id).to_not be_nil
     end
   end
