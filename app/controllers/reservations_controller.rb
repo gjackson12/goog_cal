@@ -20,7 +20,10 @@ class ReservationsController < ApplicationController
   end
 
   def update
-    if @reservation.save
+    @reservation = Reservation.find(params[:id])
+    if @reservation.update_attributes(reservation_params)
+      @reservation.syndicate_update(google_token)
+      redirect_to reservations_path
       flash[:notice] = "You've successfully updated this reservation."
     end
   end
