@@ -14,10 +14,9 @@ module Google
     end
 
     def save
-      binding.pry
       if self.token.present?
-        binding.pry
         client = Google::APIClient.new(:application_name => "goog_cal",:application_version => "0.0")
+        binding.pry
         client.authorization.access_token = @token
         service ||= client.discovered_api('calendar', 'v3')
         result = client.execute(
@@ -26,6 +25,10 @@ module Google
           :body => body,
           :headers => {'Content-Type' => 'application/json'})
         self.id = JSON.parse(result.body)["id"]
+        binding.pry
+        return self.id.present?
+      else
+        return false
       end
     end
 
@@ -41,10 +44,10 @@ module Google
         'summary' => @summary,
         'description' => @description,
         'start' => {
-          'dateTime' => @start_at['dateTime'].to_datetime.rfc3339
+          'dateTime' => @start_at.rfc3339
         },
         'end' => {
-          'dateTime' => @end_at['dateTime'].to_datetime.rfc3339
+          'dateTime' => @end_at.rfc3339
         }
       })
     end
