@@ -2,7 +2,7 @@ module Google
   class Event
     include ActiveModel::Model
 
-    attr_accessor :id, :summary, :start_at, :end_at, :calendar_id, :description, :token
+    attr_accessor :id, :summary, :start_at, :end_at, :google_calendar_id, :description, :token
 
     def initialize(token, attributes = {})
       @summary = attributes["summary"]
@@ -16,7 +16,6 @@ module Google
     def save
       if self.token.present?
         client = Google::APIClient.new(:application_name => "goog_cal",:application_version => "0.0")
-        binding.pry
         client.authorization.access_token = @token
         service ||= client.discovered_api('calendar', 'v3')
         result = client.execute(
@@ -25,7 +24,6 @@ module Google
           :body => body,
           :headers => {'Content-Type' => 'application/json'})
         self.id = JSON.parse(result.body)["id"]
-        binding.pry
         return self.id.present?
       else
         return false
@@ -35,7 +33,7 @@ module Google
     protected
     def parameters
       {
-        'calendarId' => URI.encode(@calendar_id.to_s)
+        'calendarId' => @calendar_id.to_s
       }
     end
 

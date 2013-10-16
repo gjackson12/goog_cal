@@ -2,13 +2,14 @@ require 'spec_helper'
 
 describe Google::Event do
   it 'creates an event' do
-    event = Google::Event.new({
+    event = Google::Event.new(ENV['GOOGLE_TOKEN'],{
       'summary' => 'test from api',
       'start_at' => DateTime.now,
       'end_at' => (DateTime.now + 1.hour),
-      'calendar_id' => ENV['GOOGLE_ACCOUNT']
+      'calendar_id' => "dan.m.mccoy@gmail.com",
+      'description' => "Swedish Fish"
     })
-    event.token = session[:token]
+    # event.token = ENV['GOOGLE_TOKEN']
     event.save
   end
 

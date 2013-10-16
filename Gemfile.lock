@@ -55,14 +55,15 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
-    crack (0.4.1)
-      safe_yaml (~> 0.9.0)
     diff-lcs (1.2.4)
     erubis (2.7.0)
     execjs (2.0.2)
     extlib (0.9.16)
     factory_girl (4.2.0)
       activesupport (>= 3.0.0)
+    factory_girl_rails (4.2.1)
+      factory_girl (~> 4.2.0)
+      railties (>= 3.0.0)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
     google-api-client (0.6.4)
@@ -144,7 +145,6 @@ GEM
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
-    safe_yaml (0.9.7)
     shoulda (3.5.0)
       shoulda-context (~> 1.0, >= 1.0.1)
       shoulda-matchers (>= 1.4.1, < 3.0)
@@ -182,10 +182,6 @@ GEM
     tzinfo (0.3.38)
     uuidtools (2.1.4)
     valid_attribute (1.3.1)
-    vcr (2.6.0)
-    webmock (1.13.0)
-      addressable (>= 2.2.7)
-      crack (>= 0.3.2)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -194,7 +190,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
-  factory_girl
+  factory_girl_rails
   google-api-client
   jquery-rails
   launchy
@@ -208,5 +204,3 @@ DEPENDENCIES
   sqlite3
   turbolinks
   valid_attribute
-  vcr
-  webmock (~> 1.13.0)

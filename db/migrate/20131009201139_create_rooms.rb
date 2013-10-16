@@ -4,7 +4,7 @@ class CreateRooms < ActiveRecord::Migration
       t.string :name
       t.string :location
       t.string :room_number
-      t.string :calendar_id
+      t.string :google_calendar_id
 
       t.timestamps
     end

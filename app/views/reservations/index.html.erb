@@ -1,1 +1,8 @@
-<%= @reservations.all %>
+<%= @reservations.each do |r| %>  
+  <div>
+    r.summary
+    r.start_at
+    r.end_at
+    r.room
+  </div>
+<% end %>
