@@ -18,6 +18,9 @@ gem 'turbolinks'
 
 gem 'simple_form'
 
+gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
+                              :github => 'anjlab/bootstrap-rails'
+
 group :development, :test do
   gem 'factory_girl'
   gem 'rspec-rails'
