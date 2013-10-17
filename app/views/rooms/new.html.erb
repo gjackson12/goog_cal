@@ -1,8 +1,14 @@
-<%= simple_form_for @room do |f| %>
-  <%= f.input :name %>
-  <%= f.input :location %>
-  <%= f.input :room_number %>
-  <%# TODO: move the class method invocation to the controller %>
-   <%= f.input :calendar_id, collection: @room.google_calendar_map, include_blank: 'Select...',required: true, label: "Calendar" %>
-  <%= f.button :submit %>
+<%= simple_form_for(@room, html: { class: "form-horizontal" }) do |f| %>
+  <div class="row-fluid">
+    <div class="col-md-4 col-md-offset-4">
+      <div class="text-center">
+        <h1>Create a Room</h1>
+      </div>
+      <%= f.input :name %>
+      <%= f.input :location %>
+      <%= f.input :room_number %>
+      <%= f.input :calendar_id, collection: @room.google_calendar_map, include_blank: 'Select...',  required: true, label: "Calendar" %>
+      <%= f.submit 'Submit', class: 'btn-two green' %>
+    </div>
+  </div>
 <% end %>
