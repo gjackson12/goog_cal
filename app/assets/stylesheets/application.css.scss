@@ -12,3 +12,14 @@
  *= require_tree .
  */
 @import "twitter/bootstrap";
+
+div.container {
+  margin-top: 100px;
+}
+
+.jumbotron {
+  text-align: center;
+  p {
+    padding-top: 30px;
+  }
+}
