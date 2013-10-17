@@ -1,1 +1,9 @@
-<%= @reservations.all %>
+<% @reservations.each do |r| %>  
+  <div>
+   <%= r.summary %>
+   <%=r.start_at %>
+   <%= r.end_at%>
+   <%= r.room %>
+   <%= link_to 'Edit', edit_reservation_path(r) %>
+  </div>
+<% end %>

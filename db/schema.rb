@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20131015210649) do
     t.string   "name"
     t.string   "location"
     t.string   "room_number"
-    t.string   "calendar_id"
+    t.string   "google_calendar_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
