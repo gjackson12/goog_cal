@@ -10,6 +10,10 @@
       <%= f.input :description %>
       <%= f.association :room, :label_method => :complete_name, value_method: :id, prompt: "Choose a Room" %>
       <%= f.submit "Submit", class: 'btn-two green'%>
+      <p>
+        <br />
+        Go to <%= link_to 'Rooms', rooms_path %>
+      </p>
     </div>
   </div>
 <% end %>
