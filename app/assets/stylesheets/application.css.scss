@@ -20,11 +20,27 @@ div.container {
 div.jumbotron {
   text-align: center;
   h1{
-    color: darkorange;
+    color: grey;
   }
   p {
     padding-top: 30px;
     color: darkblue;
+  }
+  span {
+    font-size: 1.2em;
+    font-family: 'Times New Roman', Garamond, sans-serif;
+  }
+  .blue {
+    color: blue;
+  }
+  .red {
+    color: red;
+  }
+  .gold {
+    color: gold;
+  }
+  .green {
+    color: green;
   }
 }
 
