@@ -4,11 +4,15 @@
       <div class="text-center">
         <h1>Create a Room</h1>
       </div>
-      <%= f.input :name %>
+      <%= f.input :name, label: 'Room Name' %>
       <%= f.input :location %>
       <%= f.input :room_number %>
       <%= f.input :calendar_id, collection: @room.google_calendar_map, include_blank: 'Select...',  required: true, label: "Calendar" %>
       <%= f.submit 'Submit', class: 'btn-two green' %>
+      <p>
+        <br />
+        Or check out <%= link_to 'Reservations', reservations_path %>
+      </p>
     </div>
   </div>
 <% end %>

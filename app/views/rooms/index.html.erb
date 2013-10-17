@@ -1,0 +1,30 @@
+<% if @rooms.present? %>
+    <h1>My Rooms</h1>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Room Name</th>
+            <th>Location</th>
+            <th>Room Number</th>
+            <th>Calendar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @rooms.each do |room| %>
+            <tr>
+              <td><%= room.name %></td>
+              <td><%= room.location %></td>
+              <td><%= room.room_number %></td>
+              <td><%= room.calendar_id %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+  <p>Create a <%= link_to 'New Reservation', new_reservation_path %> for a Room.</p>
+  <p>Go to the <%= link_to 'Reservation Index', reservations_path %>.</p>
+<% else %>
+  <div class="jumbotron">
+    <h2>No rooms present! :(</h2>
+    <p><%= link_to 'Create New Room', new_room_path %></p>
+  </div>
+<% end %>

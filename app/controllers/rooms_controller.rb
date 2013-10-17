@@ -1,5 +1,9 @@
 class RoomsController < ApplicationController
   
+  def index
+    @rooms = Room.all
+  end
+
   def new
     @room = Room.new
     @room.google_access_token = session[:token]
@@ -11,7 +15,7 @@ class RoomsController < ApplicationController
     @room.google_access_token = session[:token]
     if @room.save
       flash[:notice] = "You created a room"
-      redirect_to reservations_path
+      redirect_to rooms_path
     else
       render :new
     end
