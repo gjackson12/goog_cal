@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20131015210649) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "reservations", force: true do |t|
     t.string   "summary",         null: false
     t.string   "description",     null: false
@@ -28,7 +31,7 @@ ActiveRecord::Schema.define(version: 20131015210649) do
     t.string   "name"
     t.string   "location"
     t.string   "room_number"
-    t.string   "calendar_id"
+    t.string   "google_calendar_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
