@@ -8,11 +8,11 @@ class Reservation < ActiveRecord::Base
    belongs_to :room
 
   def syndicate(token)
-    if room.present? && room.calendar_id?
-      binding.pry
-      event = Google::Event.new(token, build_google_event).save
-      if self.id.present?
-        self.google_event_id = event.id
+    if room.present? && room.google_calendar_id?
+      event = Google::Event.new(token, build_google_event)
+      event.save
+      if valid?
+        self.google_event_id = event.id 
         self.save
       else
         return false
@@ -25,14 +25,10 @@ class Reservation < ActiveRecord::Base
   def build_google_event
    event = {
       'summary' => self.summary,
-      'start_at' => {
-        'dateTime' => self.start_at
-      },
-      'end_at' => {
-        'dateTime' => self.end_at
-      },
-      'calendar_id' => self.room_id,
+      'start_at' => self.start_at.to_datetime,
+      'end_at' => self.end_at.to_datetime,
+      'calendar_id' => self.room.google_calendar_id,
       'description' => self.description
     }
   end
- end
+end

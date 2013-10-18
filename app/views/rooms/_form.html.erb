@@ -1,0 +1,8 @@
+<%= simple_form_for @room do |f| %>
+  <%= f.input :name %>
+  <%= f.input :location %>
+  <%= f.input :room_number %>
+  <%# TODO: move the class method invocation to the controller %>
+   <%= f.input :google_calendar_id, collection: @room.google_calendar_map, required: true, label: "Calendar" %>
+  <%= f.button :submit %>
+<% end %>
