@@ -9,7 +9,7 @@ class Reservation < ActiveRecord::Base
 
   def syndicate(token)
     if room.present? && room.google_calendar_id?
-      event = Google::Event.new(token, build_google_event)
+      event = Google::Event.new(token, build_google_event, self.google_event_id, self.room.google_calendar_id)
       event.save
       if valid?
         self.google_event_id = event.id 
@@ -17,15 +17,6 @@ class Reservation < ActiveRecord::Base
       else
         return false
       end
-    else
-      return true
-    end
-  end
-
-  def syndicate_update(token)
-    if room.present? && room.google_calendar_id?
-      event = Google::EventUpdate.new(self.google_event_id, self.room.google_calendar_id, token, build_google_event)
-      event.update
     else
       return true
     end
