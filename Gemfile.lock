@@ -118,6 +118,7 @@ GEM
     omniauth-oauth2 (1.1.1)
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
+    pg (0.17.0)
     polyglot (0.3.3)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
@@ -187,7 +188,6 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
-    sqlite3 (1.3.8)
     thor (0.18.1)
     thread_safe (0.1.3)
       atomic
@@ -215,6 +215,7 @@ DEPENDENCIES
   launchy
   omniauth
   omniauth-google-oauth2!
+  pg
   pry-rails
   rails (= 4.0.0)
   rails_12factor
@@ -222,6 +223,5 @@ DEPENDENCIES
   sass-rails
   shoulda
   simple_form
-  sqlite3
   turbolinks
   valid_attribute
