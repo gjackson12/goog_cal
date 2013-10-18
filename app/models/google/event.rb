@@ -4,9 +4,8 @@
 
     attr_accessor :id, :summary, :start_at, :end_at, :google_calendar_id, :description, :token
 
-    def initialize(token, attributes = {}, event_id = nil , calendar_id = nil)
+    def initialize(token, attributes = {}, event_id = nil)
       @event_id = event_id
-      @calendar_id = calendar_id
       @summary = attributes["summary"]
       @start_at = attributes["start_at"]
       @end_at = attributes["end_at"]
@@ -21,7 +20,6 @@
         client.authorization.access_token = @token
         service ||= client.discovered_api('calendar', 'v3')
         if !persisted?
-          binding.pry
           result = client.execute(
             :api_method => service.events.insert,
             :parameters => parameters,
@@ -30,7 +28,6 @@
           self.id = JSON.parse(result.body)["id"]
           return self.id.present?
         else
-          binding.pry
           result = client.execute(
             :api_method => service.events.patch,
             :parameters => parameters,
