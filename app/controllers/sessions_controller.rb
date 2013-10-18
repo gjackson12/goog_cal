@@ -1,10 +1,8 @@
 class SessionsController < ApplicationController
   def create
-    #What data comes back from OmniAuth?
     @auth = request.env["omniauth.auth"]
-    #Use the token from the data to request a list of calendars
-    #TODO: store this token in the session
     @token = @auth["credentials"]["token"]
+    @uid = @auth["uid"] 
     session[:token] = @token
     client = Google::APIClient.new
     client.authorization.access_token = session[:token]

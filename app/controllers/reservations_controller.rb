@@ -1,7 +1,7 @@
 class ReservationsController < ApplicationController
 
   def index
-    @reservations = Reservation.all
+    @reservations = Reservation.where(uid: session[:uid])
   end
 
   def new
@@ -10,6 +10,7 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
+    @reservation.uid = session[:uid]
     if @reservation.save
       @reservation.syndicate(google_token)
       redirect_to reservations_path
