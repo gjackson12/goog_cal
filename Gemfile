@@ -23,6 +23,8 @@ gem 'sass-rails'
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
                               :github => 'anjlab/bootstrap-rails'
 
+gem 'rails_12factor'
+
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'rspec-rails'
