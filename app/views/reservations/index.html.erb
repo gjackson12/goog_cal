@@ -18,6 +18,7 @@
               <td><%= reservation.end_at %></td>
               <td><%= reservation.description %></td>
               <td><%= reservation.room.name %></td>
+              <td><%= link_to 'Edit', edit_reservation_path(reservation) %></td>
             </tr>
           <% end %>
         </tbody>
