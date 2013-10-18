@@ -1,10 +1,22 @@
-<%= simple_form_for @reservation do |f| %>
-  <%= f.input :summary, label: "Event Title" %>
-  <%= f.datetime_select :start_at, label: "Start time" %>
-  <%= f.datetime_select :end_at, label: "End time" %>
-  <%= f.input :description %>
-  <%= f.association :room, :label_method => :complete_name, value_method: :id, prompt: "Choose a Room" %>
-
-  <%= f.submit "Create this Event!" %>
-
+<%= simple_form_for(@reservation, html: { class: "form-horizontal" }) do |f| %>
+  <div class="row-fluid">
+    <div class="col-md-4 col-md-offset-4">
+      <div class="text-center">
+        <h1>Create a Reservation</h1>
+      </div>
+      <%= f.input :summary, label: "Event Title" %>
+      <%= f.datetime_select :start_at, label: "Start time" %>
+      <%= f.datetime_select :end_at, label: "End time" %>
+      <%= f.input :description %>
+      <%= f.association :room, :label_method => :complete_name, value_method: :id, prompt: "Choose a Room" %>
+      <%= f.submit "Submit", class: 'btn-two green'%>
+      <p>
+        <br />
+        Go to <%= link_to 'Reservations', reservations_path %>
+      </p>
+      <p>  
+        Go to <%= link_to 'Rooms', rooms_path %>
+      </p>
+    </div>
+  </div>
 <% end %>

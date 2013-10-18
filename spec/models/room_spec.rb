@@ -10,8 +10,8 @@ describe Room do
   it { should have_valid(:room_number).when("5", "Five") }
   it { should_not have_valid(:room_number).when(nil, "") }
 
-  it { should have_valid(:calendar_id).when("user@example.google.com") }
-  it { should_not have_valid(:calendar_id).when(nil, "") }
+  it { should have_valid(:google_calendar_id).when("user@example.google.com") }
+  it { should_not have_valid(:google_calendar_id).when(nil, "") }
 
-  it { should have_many(:events) }
+  it { should have_many(:reservations) }
 end

@@ -13,5 +13,6 @@ class SessionsController < ApplicationController
       :api_method => service.calendar_list.list,
       :parameters => {},
       :headers => {'Content-Type' => 'application/json'})
+    redirect_to new_room_path
   end
 end
