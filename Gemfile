@@ -3,8 +3,9 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'pg'
+
+gem 'uglifier', '>= 1.3.0'
 
 gem 'omniauth'
 
@@ -23,7 +24,7 @@ gem 'sass-rails'
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
                               :github => 'anjlab/bootstrap-rails'
 
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'factory_girl_rails'

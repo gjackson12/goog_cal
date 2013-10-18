@@ -12,6 +12,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     if @reservation.save
       @reservation.syndicate(google_token)
+      redirect_to reservations_path
     end
   end
 
