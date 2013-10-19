@@ -5,6 +5,11 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def current_user
+    user = User.where(uid: session[:uid]).first
+    return user
+  end
+
   def user_time_zone(&block)
     Time.use_zone(current_user.time_zone, &block)
   end
