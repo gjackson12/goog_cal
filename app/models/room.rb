@@ -5,6 +5,7 @@ class Room < ActiveRecord::Base
   validates_presence_of :google_calendar_id
 
   has_many :reservations
+  belongs_to :user, inverse_of: :rooms
 
   attr_accessor :google_access_token
 
