@@ -4,7 +4,6 @@ class User < ActiveRecord::Base
   has_many :reservations
 
  def self.find_for_google_oauth(uid, email)
-  binding.pry
   user = User.where(uid: uid).first
 
   if user
