@@ -1,7 +1,7 @@
-<%= simple_form_for @reservation do |f| %>
+<%= simple_form_for(@reservation) do |f| %>
   <%= f.input :summary, label: "Event Title" %>
   <%= f.datetime_select :start_at, label: "Start time", twelve_hour: true, class: { "time-select"} %>
-  <%= f.datetime_select :end_at, twelve_hour: true, label: "End time", class: { "time-select"} %>
+  <%= f.datetime_select :end_at, twelve_hour: true, ampm: true, label: "End time", class: { "time-select"} %>
   <%= f.input :description %>
   <%= f.association :room, :label_method => :complete_name, value_method: :id, prompt: "Choose a Room" %>
 
@@ -10,7 +10,7 @@
 <% end %>
 
 <script>
-  $(document).ready(function(){
-     $('.time-select').set_timezone(); 
-  });
+  // $(document).ready(function(){
+  //    $('.time-select').set_timezone(); 
+  // });
 </script>
