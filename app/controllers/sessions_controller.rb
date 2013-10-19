@@ -4,7 +4,6 @@ class SessionsController < ApplicationController
     @token = @auth["credentials"]["token"]
     session[:uid] = @auth.uid
     session[:token] = @token
-    binding.pry
     client = Google::APIClient.new
     client.authorization.access_token = session[:token]
     service = client.discovered_api('calendar', 'v3')
@@ -12,7 +11,6 @@ class SessionsController < ApplicationController
       :api_method => service.calendar_list.list,
       :parameters => {},
       :headers => {'Content-Type' => 'application/json'})
-    binding.pry
     create_google_user
   end
 
