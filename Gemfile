@@ -26,6 +26,8 @@ gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
 
 gem 'rails_12factor', group: :production
 
+gem 'detect_timezone_rails'
+
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'rspec-rails'

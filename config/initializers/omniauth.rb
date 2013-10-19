@@ -1,4 +1,4 @@
-if Rails.env == 'development'
+if Rails.env.development?
   @redirect_uri = 'http://localhost:3000/auth/google_oauth2/callback'
 else
   @redirect_uri = 'http://goog-cal.herokuapp.com/auth/google_oauth2/callback'

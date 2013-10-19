@@ -63,6 +63,8 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    detect_timezone_rails (0.0.5)
+      railties (>= 3.1)
     diff-lcs (1.2.4)
     erubis (2.7.0)
     execjs (2.0.2)
@@ -212,6 +214,7 @@ PLATFORMS
 DEPENDENCIES
   anjlab-bootstrap-rails!
   capybara
+  detect_timezone_rails
   factory_girl_rails
   google-api-client
   jquery-rails
