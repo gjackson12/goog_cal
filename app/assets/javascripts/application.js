@@ -15,7 +15,5 @@
 //= require turbolinks
 //= require_tree .
 //= require twitter/bootstrap
-//= require detect_timezone
-//= require jquery.detect_timezone
-
+//= require browser_timezone_rails/application.js
 
