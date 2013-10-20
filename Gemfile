@@ -24,7 +24,7 @@ gem 'sass-rails'
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
                               :github => 'anjlab/bootstrap-rails'
 
-gem 'browser-timezone-rails'
+gem 'detect_timezone_rails'
 
 gem 'rails_12factor', group: :production
 
