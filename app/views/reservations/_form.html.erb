@@ -5,8 +5,8 @@
         <h1>Create a Reservation</h1>
       </div>
       <%= f.input :summary, label: "Event Title" %>
-      <%= f.datetime_select :start_at, label: "Start time", ampm: true, input_html: {class: "time-zone"}%>
-      <%= f.datetime_select :end_at, label: "End time", ampm: true, input_html: {class: "time-zone"} %>
+      <%= f.datetime_select :start_at, label: "Start time", ampm: true %>
+      <%= f.datetime_select :end_at, label: "End time", ampm: true %>
       <%= f.input :description %>
       <%= f.association :room, collection: current_user.rooms, :label_method => :complete_name, value_method: :id, prompt: "Choose a Room" %>
       <%= f.submit "Submit", class: 'btn-two green'%>
@@ -20,9 +20,3 @@
     </div>
   </div>
 <% end %>
-
-<script>
-$(document).ready(function(){
-    $('.time-zone').set_timezone(); 
-});
-</script>

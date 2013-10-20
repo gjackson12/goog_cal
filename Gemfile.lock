@@ -48,6 +48,9 @@ GEM
       addressable (>= 2.3.1)
       extlib (>= 0.9.15)
       multi_json (>= 1.0.0)
+    browser-timezone-rails (0.0.6)
+      jquery-rails
+      rails (>= 3.1)
     builder (3.1.4)
     capybara (2.1.0)
       mime-types (>= 1.16)
@@ -63,8 +66,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
-    detect_timezone_rails (0.0.5)
-      railties (>= 3.1)
     diff-lcs (1.2.4)
     erubis (2.7.0)
     execjs (2.0.2)
@@ -213,8 +214,8 @@ PLATFORMS
 
 DEPENDENCIES
   anjlab-bootstrap-rails!
+  browser-timezone-rails
   capybara
-  detect_timezone_rails
   factory_girl_rails
   google-api-client
   jquery-rails
