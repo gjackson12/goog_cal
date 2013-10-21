@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def redirect_if_logged_in
+    redirect_to reservations_path if current_user.present?
+  end
+
   def current_user
     user = User.where(uid: session[:uid]).first
     return user
