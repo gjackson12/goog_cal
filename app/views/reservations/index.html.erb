@@ -14,8 +14,8 @@
           <% @reservations.each do |reservation| %>
             <tr>
               <td><%= reservation.summary %></td>
-              <td><%= reservation.start_at %></td>
-              <td><%= reservation.end_at %></td>
+              <td><%= reservation.start_at.strftime("%A %B %e %l:%M%p") %></td>
+              <td><%= reservation.end_at.strftime("%A %B %e %l:%M%p") %></td>
               <td><%= reservation.description %></td>
               <td><%= reservation.room.name %></td>
               <td><%= link_to 'Edit', edit_reservation_path(reservation) %></td>
