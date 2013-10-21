@@ -1,7 +1,7 @@
 class ReservationsController < ApplicationController
 
   def index
-    @reservations = Reservation.all
+    @reservations = Reservation.where(user_id: current_user.id)
   end
 
   def new
@@ -10,6 +10,7 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
+    @reservation.user_id = current_user.id
     if @reservation.save
       @reservation.syndicate(google_token)
       redirect_to reservations_path
@@ -32,6 +33,6 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:summary, :start_at, :end_at, :description, :room_id)
+    params.require(:reservation).permit(:summary, :start_at, :end_at, :description, :room_id )
   end
 end

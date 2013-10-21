@@ -6,6 +6,7 @@ class Reservation < ActiveRecord::Base
   
 
    belongs_to :room
+   belongs_to :user, inverse_of: :reservations
 
   def syndicate(token)
     if room.present? && room.google_calendar_id?

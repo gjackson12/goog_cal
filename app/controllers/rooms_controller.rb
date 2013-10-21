@@ -1,7 +1,7 @@
 class RoomsController < ApplicationController
   
   def index
-    @rooms = Room.all
+    @rooms = Room.where(user_id: current_user.id)
   end
 
   def new
@@ -14,6 +14,7 @@ class RoomsController < ApplicationController
     @room = Room.create(room_params)
     
     @room.google_access_token = google_token
+    @room.user_id = current_user.id
     if @room.save
       flash[:notice] = "You created a room"
       redirect_to rooms_path
